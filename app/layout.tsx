@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import type { ReactNode } from "react";
 import { DM_Sans, Space_Grotesk } from "next/font/google";
+import { SpeedInsights } from "@vercel/speed-insights/next";
 import "./globals.css";
 
 const dmSans = DM_Sans({
@@ -30,7 +31,10 @@ export default function RootLayout({
 }>) {
 	return (
 		<html lang="id" className={`${dmSans.variable} ${spaceGrotesk.variable}`}>
-			<body>{children}</body>
+			<body>
+				{children}
+				<SpeedInsights />
+			</body>
 		</html>
 	);
 }
